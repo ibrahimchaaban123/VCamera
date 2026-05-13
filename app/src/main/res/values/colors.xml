@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Dark theme -->
+    <color name="bg_dark">#0F1117</color>
+    <color name="card_bg">#1A1D27</color>
+    <color name="control_bg">#2A2D3A</color>
+    <color name="text_secondary">#8A8FA8</color>
+
+    <!-- Accent colors -->
+    <color name="green_accent">#22C55E</color>
+    <color name="blue_accent">#3B82F6</color>
+    <color name="purple_accent">#8B5CF6</color>
+    <color name="orange_accent">#F97316</color>
+    <color name="red_accent">#EF4444</color>
+
+    <!-- Legacy -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

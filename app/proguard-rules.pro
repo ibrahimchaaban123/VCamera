@@ -1,0 +1,3 @@
+-keep class com.vcamera.app.** { *; }
+-keep class androidx.media3.** { *; }
+-dontwarn android.hardware.camera2.**
