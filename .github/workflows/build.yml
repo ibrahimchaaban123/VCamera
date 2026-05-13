@@ -10,21 +10,25 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
+
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
-      - name: Install SDK
+
+      - name: Install SDK packages
         run: sdkmanager --install "platforms;android-36" "build-tools;34.0.0"
-      - name: Generate and Build
-        run: |
-          mkdir -p app/src/main/{java/com/vcamera/app/{ui,service,camera,model},res/{layout,values,drawable,mipmap-anydpi-v26,xml}}
-          mkdir -p gradle/wrapper
-          curl -sL https://github.com/gradle/gradle/raw/v8.4.0/gradle/wrapper/gradle-wrapper.jar -o gradle/wrapper/gradle-wrapper.jar
-          curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradlew -o gradlew
-          chmod +x gradlew
-          echo "gradlew ready"
-          ls -la gradlew
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Build APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: gradle assembleDebug --stacktrace
+        working-directory: .
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
